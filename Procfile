@@ -1,1 +1,1 @@
-web: gunicorn goldmart.wsgi
+web: gunicorn goldmart.wsgi:application
