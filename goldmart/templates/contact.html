@@ -1,0 +1,136 @@
+<!-- ==================== CONTACT.HTML ==================== -->
+{% extends "base.html" %}
+{% block title %}Contact Us - Luxe Ornaments{% endblock %}
+
+{% block content %}
+<style>
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        color: var(--primary-gold);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .decorative-line {
+        height: 3px;
+        width: 120px;
+        background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        margin: 2rem auto 4rem;
+    }
+
+    .contact-form-wrapper {
+        background: rgba(26, 26, 26, 0.9);
+        border-radius: 30px;
+        padding: 4rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        max-width: 700px;
+        margin: 0 auto;
+        transition: all 0.4s ease;
+    }
+
+    .contact-form-wrapper:hover {
+        border-color: rgba(212, 175, 55, 0.5);
+        box-shadow: 0 25px 70px rgba(212, 175, 55, 0.15);
+    }
+
+    .form-label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-gold);
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .form-control {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(212, 175, 55, 0.3);
+        border-radius: 15px;
+        color: var(--text-light);
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+    }
+
+    .form-control:focus {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: var(--primary-gold);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        color: var(--text-light);
+        outline: none;
+    }
+
+    .btn-submit {
+        background: linear-gradient(135deg, var(--primary-gold) 0%, #FFD700 100%);
+        border: none;
+        border-radius: 15px;
+        color: #000;
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        margin-top: 1rem;
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        background: linear-gradient(135deg, #FFD700 0%, var(--primary-gold) 100%);
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 3rem;
+        }
+
+        .contact-form-wrapper {
+            padding: 2rem;
+        }
+
+        .form-label {
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+<div class="page-content">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="decorative-line"></div>
+    
+    <div class="contact-form-wrapper">
+        <form>
+            <div class="mb-4">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" required placeholder="Your full name">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required placeholder="your.email@example.com">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit w-100">Send Message</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

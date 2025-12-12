@@ -1,0 +1,277 @@
+
+
+<!-- ==================== LANDING.HTML ==================== -->
+{% extends "base.html" %}
+{% block title %}Home - Luxe Ornaments{% endblock %}
+
+{% block content %}
+<style>
+    .hero-section {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .hero-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 6rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, #FFD700 0%, var(--primary-gold) 50%, #FFA500 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)); }
+        to { filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.6)); }
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+        color: #cccccc;
+        font-weight: 300;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-top: 2rem;
+    }
+
+    .decorative-line {
+        height: 3px;
+        width: 150px;
+        background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        margin: 2rem auto;
+    }
+
+    /* Products Section */
+    .products-section {
+        padding: 3rem 0;
+    }
+
+    .section-subtitle {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--primary-gold);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .product-card {
+        background: rgba(26, 26, 26, 0.9);
+        border-radius: 25px;
+        overflow: hidden;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        transition: all 0.4s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+        border-color: rgba(212, 175, 55, 0.5);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image {
+        transform: scale(1.1);
+    }
+
+    .product-image-wrapper {
+        overflow: hidden;
+        background: #000;
+    }
+
+    .product-body {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+    }
+
+    .product-description {
+        color: #aaa;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+    }
+
+    .product-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-gold);
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-buy {
+        background: linear-gradient(135deg, var(--primary-gold) 0%, #FFD700 100%);
+        border: none;
+        border-radius: 12px;
+        color: #000;
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-buy:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+        background: linear-gradient(135deg, #FFD700 0%, var(--primary-gold) 100%);
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 3.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+
+        .section-subtitle {
+            font-size: 2.5rem;
+        }
+
+        .product-image {
+            height: 250px;
+        }
+
+        .product-body {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<div class="page-content">
+    <div class="hero-section">
+        <div>
+            <h1 class="hero-title">Welcome to LUXE</h1>
+            <div class="decorative-line"></div>
+            <p class="hero-subtitle">Premium Ornaments Collection</p>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+        <h2 class="section-subtitle">Featured Collection</h2>
+        
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80" alt="Diamond Necklace" class="product-image">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Diamond Elegance Necklace</h3>
+                        <p class="product-description">Exquisite diamond necklace featuring premium stones in 18K white gold setting</p>
+                        <div class="product-price">$2,499</div>
+                        <button class="btn btn-buy w-100">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80" alt="Gold Earrings" class="product-image">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Royal Gold Earrings</h3>
+                        <p class="product-description">Handcrafted gold earrings with intricate detailing and pearl accents</p>
+                        <div class="product-price">$1,899</div>
+                        <button class="btn btn-buy w-100">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80" alt="Sapphire Ring" class="product-image">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Sapphire Luxury Ring</h3>
+                        <p class="product-description">Stunning blue sapphire ring with diamond halo in platinum setting</p>
+                        <div class="product-price">$3,299</div>
+                        <button class="btn btn-buy w-100">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=800&q=80" alt="Pearl Bracelet" class="product-image">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Pearl Grace Bracelet</h3>
+                        <p class="product-description">Elegant freshwater pearl bracelet with gold clasp and accents</p>
+                        <div class="product-price">$1,299</div>
+                        <button class="btn btn-buy w-100">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/57a1aa6259cc688c3e32c6c5/1528920831847-O53BZOW7ZNXXMPGAZYCN/emerald-diamond-parure-belonging-to-marie-louise.jpg" alt="Emerald Pendant" class="product-image">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Emerald Crown Pendant</h3>
+                        <p class="product-description">Rare emerald pendant surrounded by diamonds in yellow gold</p>
+                        <div class="product-price">$2,799</div>
+                        <button class="btn btn-buy w-100">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80" alt="Ruby Set" class="product-image">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Ruby Majesty Set</h3>
+                        <p class="product-description">Complete jewelry set featuring Burmese rubies and diamond accents</p>
+                        <div class="product-price">$4,999</div>
+                        <button class="btn btn-buy w-100">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+<!-- ==================== ABOUT.HTML ==================== -->
+{% extends "base.html" %}
+{% block title %}About Us - Luxe Ornaments{% endblock %}
+
+{% block content %}
+<style>
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 4.5rem;
+        font-weight: 800;
+        color: var(--primary-gold);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .decorative-line {
+        height: 3px;
+        width: 120px;
+        background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+        margin: 2rem auto;
+    }
+
+    .about-card {
+        background: rgba(26, 26, 26, 0.8);
+        border-radius: 30px;
+        padding: 4rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        transition: all 0.4s ease;
+        margin-top: 3rem;
+    }
+
+    .about-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 80px rgba(212, 175, 55, 0.2);
+        border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .about-text {
+        font-size: 1.3rem;
+        line-height: 2;
+        color: #d0d0d0;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 3rem;
+        }
+
+        .about-card {
+            padding: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+<div class="page-content">
+    <h2 class="section-title">About Us</h2>
+    <div class="decorative-line"></div>
+    
+    <div class="about-card">
+        <p class="about-text">
+            We are curators of exquisite ornaments and fine jewelry, bringing timeless elegance to your collection. 
+            Each piece is carefully selected to embody sophistication, craftsmanship, and luxury. 
+            Our passion is to adorn you with pieces that tell your unique story. From classic designs to contemporary 
+            masterpieces, we offer an unparalleled selection that celebrates beauty and artistry.
+        </p>
+    </div>
+</div>
+{% endblock %}
